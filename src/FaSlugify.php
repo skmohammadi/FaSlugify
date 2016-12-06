@@ -56,7 +56,7 @@ class FaSlugify {
     	else
     	{
     		$string = strtolower($string);
-        	$string = mb_ereg_replace('([^ا-ی۰-۹a-z0-9]|-)+', $separator, $string);
+        	$string = mb_ereg_replace('([^\x{0600}-\x{06FF}a-z0-9]|-)+', $separator, $string); // by SKM: 12/6/2016
         	$string = strtolower($string);
     	}
 
